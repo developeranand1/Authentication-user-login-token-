@@ -3,6 +3,12 @@ const mongoose= require('mongoose');
 const Schema= mongoose.Schema;
 
 const meSchema = new Schema({
+
+  user_id:{
+    type:mongoose.Schema.Types.ObjectId,
+    required:true,
+    ref:"Me"
+    },
     username:{
         type:String,
         required:[true,"Please add the user name"]

@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler");
 const Me = require("../models/meModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const user = require("../models/user");
+
 
 const JWT_KEY = "hsdfkj";
 
@@ -73,7 +73,7 @@ const loginUser = asyncHandler(async (req, res) => {
 });
 
 const currentUser = asyncHandler(async (req, res) => {
-  res.json({ message: "current the user information!" });
+  res.json(req.datas);
 });
 
 module.exports = { registerUser, loginUser, currentUser };
